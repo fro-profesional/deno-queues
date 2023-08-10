@@ -8,8 +8,8 @@ import "$std/dotenv/load.ts";
 
 import { start } from "$fresh/server.ts";
 import manifest from "./fresh.gen.ts";
+import { denokv } from "./denokv.ts"
 
-const denokv = await Deno.openKv();
 denokv.listenQueue(async (msg: unknown) => {
   console.log({ msg })
 });

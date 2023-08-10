@@ -1,6 +1,5 @@
 import { HandlerContext } from "$fresh/server.ts";
-
-const denokv = await Deno.openKv();
+import { denokv } from "../denokv.ts"
 
 export const handler = async (_req: Request, _ctx: HandlerContext): Response => {
   await denokv.enqueue("bar-1",);
